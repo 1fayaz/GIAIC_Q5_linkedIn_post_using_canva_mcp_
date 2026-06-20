@@ -99,7 +99,7 @@ git add .
 git commit -m "Agent Factory LinkedIn Content Studio"
 git branch -M main
 git remote add origin https://github.com/<you>/<repo>.git
-git push -u origin main
+
 ```
 
 (`node_modules`, `.next`, `.venv`, `.env*`, and logs are already git-ignored.)
