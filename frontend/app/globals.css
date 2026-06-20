@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-[#0b1120] text-slate-100;
+}
+
+/* Surface = card backgrounds that adapt to theme */
+@layer components {
+  .surface {
+    @apply rounded-2xl border bg-white/90 border-slate-200 shadow-soft backdrop-blur;
+  }
+  .dark .surface {
+    @apply bg-slate-900/70 border-slate-700/60;
+  }
+  .field {
+    @apply w-full rounded-xl border bg-white px-3.5 py-2.5 text-sm text-slate-900
+      border-slate-300 outline-none transition
+      focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/40;
+  }
+  .dark .field {
+    @apply bg-slate-800/80 text-slate-100 border-slate-600
+      focus:border-brand-accent;
+  }
+  .label {
+    @apply text-xs font-semibold uppercase tracking-wide text-slate-500;
+  }
+  .dark .label {
+    @apply text-slate-400;
+  }
+  .chip {
+    @apply rounded-full px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-700;
+  }
+  .dark .chip {
+    @apply bg-slate-800 text-slate-300;
+  }
+}
+
+/* Prevent FOUC: hide until theme class resolved */
+.theme-init {
+  visibility: hidden;
+}
